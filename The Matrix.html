@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fullstack Developer</title>
+  <style>
+    /* الخلفية: تأثير المتريكس */
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: black;
+      color: #00ff00;
+      font-family: 'Courier New', Courier, monospace;
+      height: 100vh;
+      direction: rtl;
+    }
+
+    canvas {
+      display: block;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+    }
+
+    /* نص ترحيبي */
+    .welcome-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-size: 3rem;
+      text-shadow: 0 0 10px #00ff00;
+    }
+  </style>
+  <title>Ramy | Fullstack Developer</title>
+<link rel="icon" type="image/ico" href="https://k.top4top.io/p_3443gm0i11.png" />
+</head>
+<body>
+
+  <canvas id="matrix"></canvas>
+
+  <div class="welcome-text">
+    
+  </div>
+
+  <script>
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+
+    // ضبط حجم الكانفس
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()אבגדהוזחטיךכלםמןנסעףפץצקרשת'.split('');
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+
+    // مصفوفة ترمز لموقع الحروف لكل عمود
+    const drops = [];
+
+    for(let x = 0; x < columns; x++) {
+      drops[x] = Math.floor(Math.random() * canvas.height / fontSize);
+    }
+
+    function draw() {
+      // خلفية شبه شفافة لتخلي الحروف تختفي تدريجياً
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#0F0'; // اللون الأخضر
+      ctx.font = fontSize + 'px monospace';
+
+      for(let i = 0; i < drops.length; i++) {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        // إعادة تعيين العمود لو وصل للنهاية بشكل عشوائي
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+
+        drops[i]++;
+      }
+    }
+
+    setInterval(draw, 33);
+
+    // تحديث الحجم عند تغير نافذة المتصفح
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+
+</body>
+</html>

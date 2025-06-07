@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Link Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: #000;
+      color: #fff;
+      padding: 20px;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    h1 {
+      font-size: 2.5rem;
+    }
+    .lang-btn {
+      background: #444;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .tab {
+      background: #222;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .tab:hover, .tab.active {
+      background: #444;
+    }
+    .tab-content {
+      display: none;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    .tab-content.active {
+      display: grid;
+    }
+    .card {
+      background: #111;
+      border-radius: 12px;
+      padding: 20px;
+      transition: background 0.3s;
+    }
+    .card:hover {
+      background: #222;
+    }
+    .card a {
+      color: #fff;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+	.card {
+  padding: 1rem;
+  border-radius: 12px;
+  margin: 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* لكل قسم لون مميز */
+.card-programming { background: linear-gradient(135deg, #004e92, #6fd4ff, #004e92) ; }
+.card-OpenAI     { background: linear-gradient(135deg, #004e92, #6fd4ff, #004e92) ; }
+.card-social     { background: linear-gradient(135deg, #004e92, #6fd4ff, #004e92) ; }
+.card-movies     { background: linear-gradient(135deg, #004e92, #6fd4ff, #004e92) ; }
+.card-games      { background: linear-gradient(135deg, #004e92, #6fd4ff, #004e92) ; }
+.card-3d         { background: linear-gradient(135deg, #004e92, #6fd4ff, #004e92) ; }
+.card-design     { background: linear-gradient(135deg, #004e92, #6fd4ff, #004e92) ; }
+
+/* تأثير تكبير عند الظهور */
+.zoom {
+  animation: zoomIn 0.5s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* تأثير سلايد وفيد */
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out;
+}
+.slide-in {
+  animation: slideIn 0.4s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideIn {
+  from { transform: translateY(30px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+.logo {
+    position: fixed;
+    top: 10px;
+    left: 600px;
+    width: 120px;
+    height: 120px;
+    z-index: 9999;
+    cursor: pointer;
+  }
+
+  .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  
+  /* ✅ تصميم متجاوب للتابلت والموبايل */
+@media (max-width: 768px) {
+  .logo {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .lang-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .tabs {
+    justify-content: center;
+  }
+
+  .tab {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  .tab-content {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    padding: 1rem 0.5rem;
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+#title {
+  animation: pulse 2s infinite;
+}
+
+#title {
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b, #ff7e5f);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientText 4s linear infinite;
+}
+
+@keyframes gradientText {
+  0% { background-position: 0% }
+  100% { background-position: 200% }
+}
+
+
+  </style>
+  <title>Link Hub</title>
+<link rel="icon" type="image/ico" href="https://l.top4top.io/p_3441n3mw61.png" />
+</head>
+<body>
+
+  <div class="header">
+    <h1 id="title">Link Hub</h1>
+    <button class="lang-btn" onclick="toggleLanguage()">العربية</button>
+  </div>
+
+  <div class="tabs" id="tabs"></div>
+  <div id="contents"></div>
+  
+ 
+
+  <script src="js/script.js"></script>
+</body>
+</html>
