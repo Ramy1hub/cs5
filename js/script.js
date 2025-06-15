@@ -112,7 +112,7 @@ const categories = [
     id: "design",
     name: { en: "Design", ar: "التصميم" },
     links: [
-      { name: "Behance", url: "https://behance.net" },
+      { name: "imgbb", url: "https://ar.imgbb.com/" },
       { name: "Dribbble", url: "https://dribbble.com" },
       { name: "Figma", url: "https://figma.com" },
 	  { name: "background remover", url: "https://www.remove.bg/upload" },
