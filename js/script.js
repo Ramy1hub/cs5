@@ -15,7 +15,7 @@ const categories = [
       { name: "github profile", url: "https://zzetao.github.io/awesome-github-profile/" },
       { name: "W3Schools", url: "https://www.w3schools.com" },
 	  { name: "parceljs", url: "https://parceljs.org/docs/" },
-	  { name: "Figma", url: "https://www.figma.com/" },
+	  { name: "clickup", url: "https://app.clickup.com/" },
 	  { name: "code-generator", url: "https://www.html-code-generator.com/" },
 	  { name: "vite.dev", url: "https://vite.dev/" },
 	  { name: "developer", url: "https://developer.mozilla.org/en-US/" },
@@ -32,7 +32,7 @@ const categories = [
       { name: "araby.ai", url: "https://www.arabygpt.araby.ai/" },
 	  { name: "generateprompt", url: "https://generateprompt.ai/" },
 	  { name: "thek.ai", url: "https://app.thek.ai/ai-chat" },
-	  { name: "Gamma AI", url: "https://gamma.app/create" },
+	  { name: "yupp.ai", url: "https://yupp.ai/" },
 	  { name: "opal.google", url: "https://opal.google/" },
 	  { name: "n8n.io", url: "https://n8n.io/" },
       { name: "perplexity", url: "https://www.perplexity.ai/" },
@@ -200,5 +200,6 @@ function toggleLanguage() {
 // Initial render
 renderTabs();
 renderContent();
+
 
 
