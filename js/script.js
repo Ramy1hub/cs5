@@ -28,15 +28,16 @@ const categories = [
       { name: "Gamma AI", url: "https://gamma.app/create" },
 	  { name: "chatgpt", url: "https://chatgpt.com/" },
       { name: "(gemini)", url: "https://gemini.google.com/" },
+	  { name: "aistudio.google", url: "https://aistudio.google.com/welcome" },
       { name: "araby.ai", url: "https://www.arabygpt.araby.ai/" },
 	  { name: "generateprompt", url: "https://generateprompt.ai/" },
 	  { name: "thek.ai", url: "https://app.thek.ai/ai-chat" },
 	  { name: "Gamma AI", url: "https://gamma.app/create" },
-	  { name: "chatgpt", url: "https://chatgpt.com/" },
-      { name: "X (Twitter)", url: "https://x.com" },
-      { name: "Instagram", url: "https://instagram.com" },
-	  { name: "Facebook", url: "https://facebook.com" },
-	  { name: "Facebook", url: "https://facebook.com" },
+	  { name: "opal.google", url: "https://opal.google/" },
+	  { name: "n8n.io", url: "https://n8n.io/" },
+      { name: "perplexity", url: "https://www.perplexity.ai/" },
+      { name: "buildwithai.io", url: "https://www.buildwithai.io/" },
+	  { name: "aistudio.google", url: "https://aistudio.google.com/welcome" },
     ],
   },
     {
@@ -199,4 +200,5 @@ function toggleLanguage() {
 // Initial render
 renderTabs();
 renderContent();
+
 
